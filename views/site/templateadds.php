@@ -17,8 +17,8 @@ use yii\helpers\ArrayHelper;
 				"options"=>["enctype"=>"multipart/form-data"],
 			]);
 		?>
-		<?= $form->field($model,'foto')->fileInput(['class'=>'col-6 col-12-mobile'])?></br>
-		<?= $form->field($model,'name')->textInput(['class'=>'col-6 col-12-mobile','placeholder' => "Название"])?></br>
+		<?= $form->field($model,'foto')->fileInput(['class'=>'col-6 col-12-mobile'])?>
+		<?= $form->field($model,'name')->textInput(['class'=>'col-6 col-12-mobile','placeholder' => "Название"])?>
 		<div class="col-12">
 			<?= $form->field($model,'opisanie')->textarea(['class'=>'bookaddop','rows'=>'5','placeholder' => "Описание"])?>
 		</div>

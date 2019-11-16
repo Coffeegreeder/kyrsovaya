@@ -10,7 +10,7 @@ use yii\helpers\ArrayHelper;
 	<div class='panel1'>
 		<?php 
 			$form=ActiveForm::begin([
-				"action"=>"redrec",
+				"action"=>"/site/redrec",
 				"method"=>"post",
 				]);
 			for ($i=1; $i < 5; $i++) { 

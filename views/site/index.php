@@ -1,6 +1,7 @@
 <?php
 namespace app\models;
 use yii\bootstrap\ActiveForm;
+use app\assets\AppAsset;
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 use Yii;
@@ -36,13 +37,13 @@ use Yii;
                         echo "<div class='panel-group category-products' id='accordian'>";
                             echo "<div class='panel panel-default'>";
                                 echo "<div class='panel-heading'>";
-                                    echo "<h3 class='panel-title'><a href='index'</a>Все виды</h3>";
+                                    echo "<h3 class='panel-title'><a href='/site/index#portfolio'</a>Все виды</h3>";
                                 echo "</div>";    
                             echo "</div>";
                         foreach ($model1 as $yel) {
                             echo "<div class='panel panel-default'>";
                                 echo "<div class='panel-heading'>";
-                                    echo "<h3 class='panel-title'><a href='index?tag=".$yel->id."'>".$yel->tag."</a></h3>";
+                                    echo "<h3 class='panel-title'><a href='/site/index?tag=".$yel->id."#portfolio'>".$yel->tag."</a></h3>";
                                 echo "</div>";    
                             echo "</div>";
                             }
@@ -74,17 +75,17 @@ use Yii;
                             }
                             echo '<div class="col-4 col-12-mobile">
 							<article class="item">
-										<a href="#" class="image fit"><img src="../web/images/layout/pic02.jpg" alt="" /></a>
+										<a href="/site/watch?id='.$yel->id.'" class="image fit"><img src="'.$yel->foto.'" />
 										<header>
 											<h2>'.$yel->name.'</h2>
-											<p>Жанр: '.$yel->tag->tag.'</p>
-											<h4>Цена: '.$yel->price.' руб.</h4>';
+											<p>Категория: '.$yel->tag->tag.'</p>
+											<h4>Цена: '.$yel->price.' руб.</h4></a>';
 											if(!Yii::$app->user->isGuest){ 
 												echo '<div class="redtov">
 																<a href="redknig?id='.$yel->id.'">Редактировать</a>
 														</div>';
 											}else{ 
-												echo '<button  class="btn btn-primary"  onclick="location.href=\'addcart?id='.$yel->id.'\'">В корзину</button>';
+												echo '<button  class="btn btn-primary"  onclick="location.href=\'/site/addcart?id='.$yel->id.'\'">В корзину</button>';
 											}
 											echo '</header>
 										 </article>

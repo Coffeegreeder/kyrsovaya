@@ -52,15 +52,9 @@ use yii\helpers\ArrayHelper;
 						?>
 							<div id='a'><?= $form->field($model1,'fio')->textInput(['class'=>'','placeholder' => 'ФИО'])?>
 							<?= $form->field($model1,'number')->input('tel',['class'=>'','placeholder' => "+79111234567"])?></div>									
-							<div id='c'><?= $form->field($model1,'comment')->textarea(['class'=>'','rows'=>'5','placeholder' => "Самовывоз, удобное время доставки"])?></div>
-							<div id='d'><?= $form->field($model1,'indeks')->textInput(['class'=>'','placeholder' => "115225"])?>
-								<?= $form->field($model1,'oplata')->dropDownList([
-							    'nal' => 'Наличными',
-							    'card' => 'Картой',
-							],['onchange' => 'oplata(this)'])?></div>
-							<div class="oplata" id="oplata"></div>
+								
 
-							<?= Html::submitButton('Заказать',['class'=>'btnbuy','id'=>''])?>
+							<?= Html::submitButton('Перейти к оплате',['class'=>'btnbuy','id'=>''])?>
 						<?php
 							ActiveForm::end();
 						?>

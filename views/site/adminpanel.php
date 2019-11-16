@@ -9,7 +9,7 @@
 				<div class='panel panel-default'>
 					<div class='panel-heading'>
 						<h3 class='panel-title' id="a">
-							<a href='templateadds'>Добавить шаблон</a>
+							<a href='/site/templateadds'>Добавить шаблон</a>
 						</h3>
 					</div>
 				</div>
@@ -23,7 +23,7 @@
 				<div class='panel panel-default'>
 					<div class='panel-heading'>
 						<h3 class='panel-title' class="c">
-							<a href='lookzak'>Просмотреть заказы></a>
+							<a href='lookzak'>Просмотреть заказы</a>
 						</h3>
 					</div>
 				</div>

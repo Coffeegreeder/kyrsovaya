@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\web\Response;
 use yii\web\UploadedFile;
 use yii\filters\VerbFilter;
+use app\assets\AppAsset;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\tovari;
@@ -131,14 +132,8 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionContactus()
-    {
-        $model = shop::find()->all();
-        $model1= new sendemail();
-        return $this->render('contact-us', ['model'=>$model,'model1'=>$model1]);
-    }
 
-    public function actionRedknig($id)
+    public function actionRedstuff($id)
     {
         $model = tovari::findOne($id);
          if($model->load(Yii::$app->request->post())&& $model->save())
@@ -152,9 +147,9 @@ class SiteController extends Controller
                 }    
             }
             $alert='Добавлено';
-            return $this->render('redknig', compact('model'));
+            return $this->render('redsruff', compact('model'));
         }
-        return $this->render('redknig', compact('model'));
+        return $this->render('redstuff', compact('model'));
     }
 
     public function actionRedtovari(){
@@ -173,34 +168,6 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionShop($tag=null,$search=null)
-    {
-        if (isset($tag)) {
-            $query = tovari::find()->with('tag')->where(['id_tag'=>$tag]);
-            $pages = new Pagination(['totalCount' =>count($query->all()), 'pageSize' => 12]);
-            $model = $query->offset($pages->offset)
-            ->limit($pages->limit)
-            ->all();
-        }else if (isset($_GET['search'])) {
-            $query = tovari::find()->with('tag')->where(['like','name',$_GET['search']]);
-            $pages = new Pagination(['totalCount' =>count($query->all()), 'pageSize' => 12]);
-            $model = $query->offset($pages->offset)
-            ->limit($pages->limit)
-            ->all();  
-        }else {
-            $model = tovari::find()->with('tag')->all();
-            $query = tovari::find();
-            $pages = new Pagination(['totalCount' =>count($query->all()), 'pageSize' => 12]);
-            $model = $query->offset($pages->offset)
-            ->limit($pages->limit)
-            ->all();
-        }
-        $model1 = tag::find()->all();
-        $model2= limit::find()->all();
-        return $this->render('shop',['model'=>$model,'model1'=>$model1, 'pages'=>$pages,'model2'=>$model2,'search'=>$search]);
-
-    }
-
 
            /**
      * Displays homepage.
@@ -215,6 +182,14 @@ class SiteController extends Controller
         $model = cart::find()->where(['id_session'=>$ipus])->all();
         return $this->render('cart', compact('model','model1','model2'));
     }
+	
+	public function actionWatch($id=null)
+    {   
+		$stuff = tovari::find()->where('id = :id', [':id' => $id])->asArray()->all();
+        $id=tovari::find()->select('id')->one();
+	
+		return $this->render('watch', compact('id','stuff'));
+	}
 
     public function actionExit(){
         if (!Yii::$app->user->isGuest) { 
