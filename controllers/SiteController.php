@@ -274,21 +274,7 @@ class SiteController extends Controller
             }
     }
 
-    public function actionMinus($id){
-        $ye= cart::findOne($id);
-        if ($ye->kolvo>1){
-            $ye->kolvo--;
-            $ye->save();
-        }
-        return $this->redirect('cart');
-    }
-
-    public function actionPlus($id){
-        $ye= cart::findOne($id);
-        $ye->kolvo++;
-        $ye->save();
-        return $this->redirect('cart');  
-    }
+    
 
     public function actionDeletetov($id){
         $ye= cart::findOne($id);

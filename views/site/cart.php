@@ -12,7 +12,7 @@ use yii\helpers\ArrayHelper;
 			<h2>Корзина</h2>
 		</header>
 		<table class='row'>
-			<tr><td><h2>Обложка:</h2></td><td><h2>Название:</h2></td><td><h2>Количество:</h2></td><td><h2>Цена:</h2></td><tr>
+			<tr><td><h2>Обложка:</h2></td><td><h2>Название:</h2></td><td><h2>Цена:</h2></td><tr>
 				<?php 
 				$nom=0;
 				if (empty($model)) {
@@ -22,7 +22,7 @@ use yii\helpers\ArrayHelper;
 					$fullprice+=$el->tovari->price*$el->kolvo;
 					echo "<tr ><td><div style='background: url(\"".$el->tovari->foto."\") no-repeat; background-size: 100px; background-position: center; height: 250px;'></div></td>
 					<td>".$el->tovari->name."</td>
-					<td><button class='btnminus' onclick='location.href=\"minus?id=".$el->id."\"'>-</button><h4 class='kolvo'>".$el->kolvo."</h4><button class='btnplus' onclick='location.href=\"plus?id=".$el->id."\"'>+</button></td>
+					
 					<td>".$el->tovari->price." руб.</td>
 					<td><button class='btndel' onclick='location.href=\"deletetov?id=".$el->id."\"'>X</button>";
 					$nom++;
