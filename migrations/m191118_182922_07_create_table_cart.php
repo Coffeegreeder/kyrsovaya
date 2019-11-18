@@ -2,7 +2,7 @@
 
 use yii\db\Migration;
 
-class m191112_173738_07_create_table_cart extends Migration
+class m191118_182922_07_create_table_cart extends Migration
 {
     public function up()
     {

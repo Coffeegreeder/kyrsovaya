@@ -2,7 +2,7 @@
 
 use yii\db\Migration;
 
-class m191112_173738_08_create_table_limit extends Migration
+class m191118_182922_08_create_table_limit extends Migration
 {
     public function up()
     {

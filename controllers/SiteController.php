@@ -227,7 +227,7 @@ class SiteController extends Controller
         return $this->render('addtag',compact('model'));
     }
 
-    public function actiontagadds()
+    public function actionTagadds()
     {
         $model=new tag();
         if($model->load(Yii::$app->request->post())&& $model->save())
@@ -237,7 +237,7 @@ class SiteController extends Controller
         }
     }
 
-    public function actiontemplateadds(){
+    public function actionTemplateadds(){
         $model=new tovari();
 
         return $this->render('templateadds',compact('model'));

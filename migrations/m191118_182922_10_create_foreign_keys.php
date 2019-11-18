@@ -2,7 +2,7 @@
 
 use yii\db\Migration;
 
-class m191112_173738_10_create_foreign_keys extends Migration
+class m191118_182922_10_create_foreign_keys extends Migration
 {
     public function up()
     {
@@ -12,7 +12,7 @@ class m191112_173738_10_create_foreign_keys extends Migration
 
     public function down()
     {
-        echo "m191112_173738_10_create_foreign_keys cannot be reverted.\n";
+        echo "m191118_182922_10_create_foreign_keys cannot be reverted.\n";
         return false;
     }
 }
