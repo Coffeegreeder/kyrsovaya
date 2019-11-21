@@ -82,7 +82,7 @@ use Yii;
 											<h4>Цена: '.$yel->price.' руб.</h4></a>';
 											if(!Yii::$app->user->isGuest){ 
 												echo '<div class="redtov">
-																<a href="redknig?id='.$yel->id.'">Редактировать</a>
+																<a href="/site/redstuff?id='.$yel->id.'">Редактировать</a>
 														</div>';
 											}else{ 
 												echo '<button  class="btn btn-primary"  onclick="location.href=\'/site/addcart?id='.$yel->id.'\'">В корзину</button>';

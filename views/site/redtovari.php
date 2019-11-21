@@ -20,7 +20,7 @@
 					        echo '<h4>Цена: '.$yel->price.' руб.</h4>';
 					        if(!Yii::$app->user->isGuest){ 
 					            echo '<div class="redtov">
-					            <a href="redknig?id='.$yel->id.'">Редактировать</a>
+					            <a href="/site/redstuff?id='.$yel->id.'">Редактировать</a>
 					            </div>';
 					            }  
 					            else{ 
@@ -30,7 +30,6 @@
 					    echo "</div>"; 
 					    }    
 				?>
-			</div>
 		</div>
 	</div>
 </section>

@@ -20,7 +20,7 @@ use yii\helpers\ArrayHelper;
 				}
 					foreach ($model as $el) {
 					$fullprice+=$el->tovari->price*$el->kolvo;
-					echo "<tr ><td><div style='background: url(\"".$el->tovari->foto."\") no-repeat; background-size: 100px; background-position: center; height: 250px;'></div></td>
+					echo "<tr ><td><div style='background: url(\"".$el->tovari->foto."\") no-repeat; background-size: 100px; background-position: center; height: 110px;'></div></td>
 					<td>".$el->tovari->name."</td>
 					
 					<td>".$el->tovari->price." руб.</td>

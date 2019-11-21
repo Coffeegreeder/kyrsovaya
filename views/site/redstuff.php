@@ -5,7 +5,8 @@ use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 $this->title = "Редактирование товара";
 
-echo '<div class="panel1">';
+echo '<div class="panel1">
+		<div class="container">';
 	$form=ActiveForm::begin([
 					"action"=>"redknig?id=".$model->id,
 					"method"=>"post",
@@ -22,4 +23,5 @@ echo '<div class="panel1">';
 		<?php
 			ActiveForm::end();
 		?>
+	</div>
 </div>
